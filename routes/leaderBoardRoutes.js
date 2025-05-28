@@ -1,5 +1,5 @@
 const express = require('express');
-const GameScore = require('../models/GameScore');
+const GameScore = require('https://be-telsnake-production.up.railway.app/models/GameScore');
 const jwt = require('jsonwebtoken');
 
 const router = express.Router();
