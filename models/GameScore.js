@@ -37,7 +37,7 @@ const GameScore = {
                         query += ' AND DATE(gs.date) = CURDATE()';
                         break;
                     case 'thisWeek':
-                        query += ' AND WEEK(gs.date) = WEEK(CURDATE())';
+                        query += ' AND WEEK(gs.dte) = WEEK(CURDATE())';
                         break;
                     case 'thisMonth':
                         query += ' AND MONTH(gs.date) = MONTH(CURDATE())';
