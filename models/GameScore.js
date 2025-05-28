@@ -3,9 +3,12 @@ const { pool } = require('../config/db');
 const GameScore = {
     saveScore: async (userId, score, game, date, time) => {
         try {
+            // Format tanggal untuk MySQL
+            const formattedDate = new Date(date).toISOString().slice(0, 19).replace('T', ' ');
+
             const [result] = await pool.execute(
                 'INSERT INTO game_scores (user_id, score, game, date, time) VALUES (?, ?, ?, ?, ?)', 
-                [userId, score, game, date, time]
+                [userId, score, game, formattedDate, time] // Gunakan formattedDate di sini
             );
             return result;
         } catch (error) {
